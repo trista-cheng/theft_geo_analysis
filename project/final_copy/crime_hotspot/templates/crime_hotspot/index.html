@@ -1,0 +1,18 @@
+<html>
+    <form action="{% url 'predict' %}" method="post">
+        {% csrf_token %}
+        <label for="address">Enter address: </label>
+        <input id="address" type="text" name="address">
+        <label for="crime_type">Enter crime_type: </label>
+        <input id="crime_type" type="text" name="crime_type">
+        <label for="model_type">Enter model_type: </label>
+        <input id="model_type" type="text" name="model_type">
+        <input type="submit" value="OK">
+    </form>
+    <p>
+        {{ params }}
+    </p>
+    <p>
+        {{ prediction.nearest_10 }}
+    </p>
+</html>
